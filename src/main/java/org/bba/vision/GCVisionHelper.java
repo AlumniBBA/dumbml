@@ -62,7 +62,7 @@ public class GCVisionHelper {
     public static String detectLabels(String filePath, String lieu[]) throws Exception {
 
         StringBuilder out = new StringBuilder();
-        out.append("{  \"graph\" : {\"title\" : \"  \",\"datasequences\": [ {\"title\":\"\",\"datapoints\" : [");
+        out.append("{  \"graph\" : {\"title\" : \" p \",\"datasequences\": [ {\"title\":\"p\",\"datapoints\" : [");
         int i = 1;
         for (String s : lieu) {
             List<AnnotateImageRequest> requests = new ArrayList<>();
@@ -90,13 +90,14 @@ public class GCVisionHelper {
                             out.append(annotation.getScore());
 
                             out.append("}");
-                            if (i < lieu.length - 1)
+                            if (i < lieu.length)
                                 out.append(",");
                         }
                     }
-                    i++;
                 }
             }
+            i++;
+
         }
         out.append("]}]}}");
         return out.toString();
