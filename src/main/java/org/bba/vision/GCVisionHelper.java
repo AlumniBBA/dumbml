@@ -46,8 +46,7 @@ public class GCVisionHelper {
                 if (res.hasError()) {
                     //result.put("error", res.getError().getMessage());
                     result.put(label, "0");
-                    //return result;
-
+                    return result;
                 }
                 List<EntityAnnotation> filtered = res.getLabelAnnotationsList().stream()
                         .filter(ann -> ann.getDescription().equals(label))

@@ -34,6 +34,11 @@ public class Endpoint {
         get("/W", (req, res) -> GCVisionHelper.detectLabels(localImage, sWod));
         get("/minW", (req, res) -> GCVisionHelper.detectLabelsMinScore(localImage, sWod));
 
+        String sJ[]={"J1","J2","J3","J4"};
+        get("/J", (req, res) -> GCVisionHelper.detectLabels(localImage, sJ));
+        get("/minJ", (req, res) -> GCVisionHelper.detectLabelsMinScore(localImage, sJ));
+
+
         get("/Z1", (req, res) -> GCVisionHelper.detectLabelsScore(localImage, "Z1"));
         get("/Z2", (req, res) -> GCVisionHelper.detectLabelsScore(localImage, "Z2"));
         get("/Z3", (req, res) -> GCVisionHelper.detectLabelsScore(localImage, "Z3"));
